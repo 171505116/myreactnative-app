@@ -7,7 +7,15 @@ on:
       - matser  # 当 matser 分支有 push 事件时触发
 
 jobs:
-  build:
-    runs-on: ubuntu-latest  # 使用 Ubuntu 最新版运行环境
+  job1:
+    step:
+    - run:pwd
+    - run:ls
+  job2:
+    steps:
+    - run :node --version
+    
+ # build:
+#    runs-on: ubuntu-latest  # 使用 Ubuntu 最新版运行环境
 
     
