@@ -1,7 +1,7 @@
 name: Build and Deploy
 
 on:
-  #workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:  # 允许手动触发
   push:
     branches:
       - matser  # 当 matser 分支有 push 事件时触发
@@ -15,7 +15,7 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     steps:
-    - run : node --version
+    - run: node --version
 
  # build:
 #    runs-on: ubuntu-latest  # 使用 Ubuntu 最新版运行环境
