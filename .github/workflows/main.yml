@@ -1,0 +1,33 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main  # 当 main 分支有 push 事件时触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 使用 Ubuntu 最新版运行环境
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # 检出代码
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2  # 设置 Node.js 环境
+      with:
+        node-version: '14'  # 使用 Node.js 的版本号，根据需要修改
+
+    - name: Install dependencies
+      run: npm install  # 安装项目依赖
+
+    - name: Build project
+      run: npm run build  # 构建项目
+      env:
+        CI: false  # 如果你的构建脚本在 CI 环境中有问题，可以设置这个环境变量为 false
+
+    - name: Deploy to GitHub Pages  # 如果你要部署到 GitHub Pages，可以添加这个步骤
+      uses: peaceiris/actions-gh-pages@v3  # 使用 GitHub Pages 部署动作
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 的 token 进行部署
+        publish_dir: ./build  # 指定构建后的目录路径
