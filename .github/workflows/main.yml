@@ -10,11 +10,11 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - run:pwd
-    - run:ls
+    - run: pwd
+    - run: ls
   job2:
     steps:
-    - run :node --version
+    - run : node --version
 
  # build:
 #    runs-on: ubuntu-latest  # 使用 Ubuntu 最新版运行环境
