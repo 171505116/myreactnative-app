@@ -12,10 +12,21 @@ jobs:
     steps:
     - run: pwd
     - run: ls
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-    - run: node --version
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      run: |
+          npm ci
+          npm run build
+
+#    - name: Deploy 🚀
+#      uses: JamesIves/github-pages-deploy-action@v4
+#      with:
+#      folder: build # The folder the action should deploy.
+#  job2:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - run: node --version
 
  # build:
 #    runs-on: ubuntu-latest  # 使用 Ubuntu 最新版运行环境
