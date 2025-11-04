@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout
-      uses: 171505116/myreactnative-app@matser
+      uses: 171505116/myreactnative-app@master
 
     - name: Run a one-line script
       run: echo Hello, world!
