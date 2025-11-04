@@ -10,8 +10,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    #- name: checkout
-    #  uses: 171505116/myreactnative-app@master
+    - name: Checkout code
+      uses: actions/checkout@v4  # 关键步骤：必须添加，否则没有代码文件
+
 
     - name: Run a one-line script
       run: echo Hello, world!
