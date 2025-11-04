@@ -20,6 +20,12 @@ jobs:
       run: |
           npm install
           npm run build
+     # 5. 上传打包产物（build 目录）作为 Artifact
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: react-build  # 制品名称（自定义，方便识别）
+        path: build/       # 要上传的目录（React 打包输出目录）
 
 #    - name: Deploy 🚀
 #      uses: JamesIves/github-pages-deploy-action@v4
