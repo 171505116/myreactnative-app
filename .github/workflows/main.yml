@@ -26,6 +26,8 @@ jobs:
         echo "当前目录文件："
         ls -la
         echo "检查 .next 目录："
+        ls -la .next/. # 若不存在，会显示 "No such file or directory"
+        echo "-------------------"
         ls -la .next/  # 若不存在，会显示 "No such file or directory"
      # 5. 上传打包产物（build 目录）作为 Artifact
     - name: Upload build artifacts
