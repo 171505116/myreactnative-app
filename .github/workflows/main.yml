@@ -2,9 +2,9 @@ name: Build and Deploy
 
 on:
   workflow_dispatch:  # 允许手动触发
-  push:
-    branches:
-      - matser  # 当 matser 分支有 push 事件时触发
+#  push:
+#    branches:
+#     - matser  # 当 matser 分支有 push 事件时触发
 
 jobs:
   job1:
